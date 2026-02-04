@@ -2,6 +2,7 @@
 A lightweight Golang backend service handling driver creation, retrieval, and suspension.
 
 ## Project Structure
+```
 driver-service/
 ├── cmd/
 │   └── server/
@@ -13,6 +14,7 @@ driver-service/
 │   └── handler/          # HTTP Transport
 ├── go.mod
 └── README.md
+```
 
 ## Tech Stack
 - Language: Go (1.22+)

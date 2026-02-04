@@ -22,8 +22,9 @@ driver-service/
 - Cache: In-Memory sync.Map with Time To Live (TTL)
 - Message Queue: Go Channels (Built-in support for Async Events)
 
-> [!Design Note]
+> [!Note]
 > Caching was mocked using in-memory adapters to ensure this project runs immediately with go run without requiring Docker or environment configuration. The interfaces (DriverRepository, DriverCache, EventQueue) are designed so implementations can be swapped cleanly.
+>
 > Database, Caching, and Concurrency mechanisms should be hot-swappable as they are decoupled from the main implementation and you only need to implement the adapter for a specific dependency then use that adapter in main.go
 
 ## How to Run
@@ -51,7 +52,8 @@ curl -X POST http://localhost:8080/drivers \
 ```
 curl "http://localhost:8080/drivers?page=1&limit=5"
 ```
-> [!Note] Observe stdout logs to see cache hits vs DB queries. Get metrics from curl output and compare
+> [!Note]
+> Observe stdout logs to see cache hits vs DB queries. Get metrics from curl output and compare
 
 3. Suspend Driver
 ```
